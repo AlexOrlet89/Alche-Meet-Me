@@ -1,3 +1,6 @@
+import { screen } from '@testing-library/react'
+import { render } from '@testing-library/react'
+import Profile from '../../components/Profile/Profile'
 
 const user = {
   id: 1,
@@ -11,5 +14,11 @@ const user = {
 }
 
 test('Should render the user profile', () => {
-
+  render(<Profile user={user} />)
+  screen.findByText('Vonta')
+  screen.findByText('Res Non Verba')
+  screen.findByText('Interests')
+  screen.findByText('React')
+  screen.getByAltText('avatar')
+  screen.getByAltText('header')
 })
