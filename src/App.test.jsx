@@ -1,5 +1,6 @@
 import { screen } from '@testing-library/react'
 import Header from './components/layout/Header'
+import './components/layout/Header.css'
 
 const { render } = require('@testing-library/react')
 
@@ -15,8 +16,15 @@ const user = {
 }
 
 test('Should render the header', async () => {
+  // renders the component we are testing
   render(<Header user={user} />)
+
+  //   const element = screen.getByAltText('Alchemy Logo')
+  //   const styles = getComputedStyle(element)
+
+  //   actual tests
   screen.debug()
   screen.getByAltText('Alchemy Logo')
+  //   expect(styles.backgroundColor).toBe('red')
   screen.findByText('Meet Vonta!')
 })
